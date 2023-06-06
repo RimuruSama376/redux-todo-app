@@ -45,8 +45,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   title: {
-    // width: 70,
-    // height: 20,
     fontFamily: "Inter-500",
     fontWeight: "500",
     fontSize: 16,

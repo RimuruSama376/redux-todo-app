@@ -56,7 +56,6 @@ const styles = StyleSheet.create({
     padding: 16,
   },
   innerContainer: {
-    // borderWidth: 1,
     flexDirection: "row",
     justifyContent: "space-between",
     marginBottom: 15,
@@ -72,11 +71,9 @@ const styles = StyleSheet.create({
     marginRight: 8,
   },
   addTaskView: {
-    // borderWidth: 1,
     marginBottom: 10,
   },
   flatList: {
-    // borderWidth: 1,
     flexGrow: 0,
     flexShrink: 1,
     marginBottom: 15,

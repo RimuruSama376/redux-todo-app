@@ -1,16 +1,20 @@
 import React from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
-
-function TaskDetails({
-  title = "NFT Web APP Prototype",
-  description = "Last year was a fantastic year for NFTs, with the market reaching a $40 billion valuation for the first time. In addition, more than $10 billion worth of NFTs are now sold every week – with NFT..",
-}) {
+import { useSelector } from "react-redux";
+function TaskDetails() {
+  const activeTask = useSelector((state) => state.currentTasks.activeTask);
+  if (!activeTask)
+    return (
+      <View style={styles.noTasksView}>
+        <Text style={styles.title}>Add some Tasks to begin!</Text>
+      </View>
+    );
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Task Title</Text>
-      <Text style={styles.taskTitleText}>{title}</Text>
+      <Text style={styles.taskTitleText}>{activeTask?.title}</Text>
       <Text style={styles.title}>Description</Text>
-      <Text style={styles.descriptionText}>{description}</Text>
+      <Text style={styles.descriptionText}>{activeTask?.description}</Text>
       <View style={styles.avatarRow}>
         <Image
           source={require("../assets/avatarGroup.png")}
@@ -22,6 +26,9 @@ function TaskDetails({
 }
 
 const styles = StyleSheet.create({
+  noTasksView: {
+    alignItems: "center",
+  },
   container: {
     backgroundColor: "#fff",
     padding: 16,
@@ -48,7 +55,7 @@ const styles = StyleSheet.create({
   },
   descriptionText: {
     // width: 342,
-    height: 84,
+    maxHeight: 84,
     fontStyle: "normal",
     fontWeight: "500",
     marginBottom: 15,

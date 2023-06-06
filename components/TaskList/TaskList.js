@@ -1,25 +1,45 @@
-import { StyleSheet, Text, View, Image, FlatList } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  FlatList,
+  TouchableOpacity,
+} from "react-native";
 import TaskCard from "./TaskCard";
 import AddTaskCard from "./AddTaskCard";
+import { useSelector, useDispatch } from "react-redux";
+import { removeAllTasks } from "../../store/todo";
 
 export default function TaskList() {
-  const tasks = [{}]; // replace with your data
-
+  const tasks = useSelector((state) => state.currentTasks.tasks);
+  const dispatch = useDispatch();
   return (
     <View style={styles.container}>
       <View style={styles.innerContainer}>
         <Text style={styles.title}>Task Title</Text>
-        <Image
-          source={require("../../assets/deleteIcon.png")}
-          style={styles.avatarImage}
-        />
+        <TouchableOpacity
+          onPress={() => {
+            dispatch(removeAllTasks());
+          }}
+        >
+          <Image
+            source={require("../../assets/deleteIcon.png")}
+            style={styles.avatarImage}
+          />
+        </TouchableOpacity>
       </View>
-      <FlatList
-        style={styles.flatList}
-        data={tasks}
-        renderItem={({ item }) => <TaskCard />}
-        keyExtractor={(item, index) => index.toString()}
-      />
+      {tasks.length !== 0 && (
+        <FlatList
+          style={styles.flatList}
+          data={tasks}
+          showsVerticalScrollIndicator={false}
+          renderItem={({ item }) => {
+            return <TaskCard task={item} />;
+          }}
+          keyExtractor={(item, index) => index.toString()}
+        />
+      )}
       <View style={styles.addTaskView}>
         <AddTaskCard />
       </View>

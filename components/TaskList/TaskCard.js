@@ -1,15 +1,18 @@
 import { useState } from "react";
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import Checkbox from "expo-checkbox";
-import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { setActiveTask } from "../../store/todo";
 
-export default function TaskCard() {
+export default function TaskCard({ task }) {
   const [isChecked, setIsChecked] = useState(false);
+  const dispatch = useDispatch();
+
   return (
     <TouchableOpacity
       style={styles.container}
       onPress={() => {
-        console.log("pressed");
+        dispatch(setActiveTask(task));
       }}
     >
       <View style={styles.innerContainer}>
@@ -19,7 +22,7 @@ export default function TaskCard() {
           onValueChange={setIsChecked}
           color={isChecked ? "#4630EB" : undefined}
         />
-        <Text style={styles.title}>Task Card</Text>
+        <Text style={styles.title}>{task.title}</Text>
       </View>
     </TouchableOpacity>
   );

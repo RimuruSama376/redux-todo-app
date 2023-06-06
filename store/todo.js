@@ -8,7 +8,7 @@ const currentTasks = createSlice({
   },
   reducers: {
     addTask: (state, action) => {
-      //   console.log(action.payload);
+      if (action.payload.title.trim() === "") return state;
       if (state.tasks.length === 0) state.activeTask = action.payload;
       state.tasks.push(action.payload);
     },

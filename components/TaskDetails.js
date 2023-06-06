@@ -34,8 +34,6 @@ const styles = StyleSheet.create({
     padding: 16,
   },
   title: {
-    // width: 70,
-    // height: 20,
     fontFamily: "Inter-500",
     fontWeight: "500",
     fontSize: 14,
@@ -54,7 +52,6 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   descriptionText: {
-    // width: 342,
     maxHeight: 84,
     fontFamily: "Inter-500",
     fontWeight: "500",
@@ -64,8 +61,6 @@ const styles = StyleSheet.create({
     color: "#111322",
   },
   avatarImage: {
-    // width: 30,
-    // height: 30,
     borderRadius: 15,
     marginRight: 8,
   },

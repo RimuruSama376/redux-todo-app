@@ -12,12 +12,10 @@ export default function Dummy() {
           style={styles.avatarImage}
         />
       </View>
-      <ScrollView>
-        <TaskCard />
-        <TaskCard />
-        <TaskCard />
-      </ScrollView>
-
+      <ScrollView></ScrollView>
+      <TaskCard />
+      <TaskCard />
+      <TaskCard />
       <AddTaskCard />
     </View>
   );

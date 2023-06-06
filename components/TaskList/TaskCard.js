@@ -1,7 +1,10 @@
+import { useState } from "react";
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
+import Checkbox from "expo-checkbox";
 import { useSelector } from "react-redux";
 
 export default function TaskCard() {
+  const [isChecked, setIsChecked] = useState(false);
   return (
     <TouchableOpacity
       style={styles.container}
@@ -10,9 +13,11 @@ export default function TaskCard() {
       }}
     >
       <View style={styles.innerContainer}>
-        <Image
-          source={require("../../assets/Union.png")}
-          style={styles.avatarImage}
+        <Checkbox
+          style={styles.checkbox}
+          value={isChecked}
+          onValueChange={setIsChecked}
+          color={isChecked ? "#4630EB" : undefined}
         />
         <Text style={styles.title}>Task Card</Text>
       </View>
@@ -45,9 +50,12 @@ const styles = StyleSheet.create({
     lineHeight: 24,
     color: "#30374F",
   },
-  avatarImage: {
-    // width: 30,
-    // height: 30,
+  checkbox: {
+    width: 24,
+    height: 24,
+    padding: 10,
+    borderRadius: 999,
+    borderWidth: 2,
     marginRight: 15,
   },
 });

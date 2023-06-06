@@ -6,7 +6,7 @@ export default function Dummy() {
   const counter = useSelector((state) => state.currentTasks.counter);
   const dispatch = useDispatch();
   return (
-    <View style={styles.container}>
+    <View>
       <Text>{counter}</Text>
       <Button
         title="pressme"

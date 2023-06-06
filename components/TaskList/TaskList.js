@@ -1,8 +1,10 @@
-import { StyleSheet, Text, View, Image, ScrollView } from "react-native";
+import { StyleSheet, Text, View, Image, FlatList } from "react-native";
 import TaskCard from "./TaskCard";
 import AddTaskCard from "./AddTaskCard";
 
-export default function Dummy() {
+export default function TaskList() {
+  const tasks = [{}]; // replace with your data
+
   return (
     <View style={styles.container}>
       <View style={styles.innerContainer}>
@@ -12,23 +14,12 @@ export default function Dummy() {
           style={styles.avatarImage}
         />
       </View>
-      <View style={styles.scrollViewContainer}>
-        <ScrollView>
-          <TaskCard />
-          <TaskCard />
-          <TaskCard />
-          <TaskCard />
-          <TaskCard />
-          <TaskCard />
-          <TaskCard />
-          <TaskCard />
-          <TaskCard />
-          <TaskCard />
-          <TaskCard />
-          <TaskCard />
-          <TaskCard />
-        </ScrollView>
-      </View>
+      <FlatList
+        style={styles.flatList}
+        data={tasks}
+        renderItem={({ item }) => <TaskCard />}
+        keyExtractor={(item, index) => index.toString()}
+      />
       <View style={styles.addTaskView}>
         <AddTaskCard />
       </View>
@@ -45,16 +36,9 @@ const styles = StyleSheet.create({
     padding: 16,
   },
   innerContainer: {
-    // flex: 1,
     // borderWidth: 1,
     flexDirection: "row",
     justifyContent: "space-between",
-    marginBottom: 15,
-  },
-  scrollViewContainer: {
-    flex: 5,
-    // borderWidth: 1,
-    height: "48%",
     marginBottom: 15,
   },
   title: {
@@ -63,14 +47,18 @@ const styles = StyleSheet.create({
     fontSize: 14,
     lineHeight: 20,
     color: "#ABB6C8",
-    marginBottom: 10,
   },
   avatarImage: {
     marginRight: 8,
   },
   addTaskView: {
-    flex: 1,
     // borderWidth: 1,
     marginBottom: 10,
+  },
+  flatList: {
+    // borderWidth: 1,
+    flexGrow: 0,
+    flexShrink: 1,
+    marginBottom: 15,
   },
 });

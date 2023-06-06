@@ -3,12 +3,15 @@ import { Provider } from "react-redux";
 import { store } from "./store/store";
 import TaskList from "./components/TaskList/TaskList";
 import Header from "./components/Header";
-import { View, StyleSheet, Dimensions } from "react-native";
+import { View, StyleSheet } from "react-native";
 import TaskDetails from "./components/TaskDetails";
+import useCustomFonts from "./fonts";
 
 export default function App() {
-  const screenHeight = Dimensions.get("window").height;
-
+  const fontsLoaded = useCustomFonts();
+  if (!fontsLoaded) {
+    return null;
+  }
   return (
     <Provider store={store}>
       <View style={[styles.container, { flex: 1 }]}>
@@ -22,10 +25,6 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    // marginVertical: 10,
-    // marginHorizontal: 20,
-    // borderWidth: 1,
-    // borderColor: "black",
     flex: 1,
   },
 });

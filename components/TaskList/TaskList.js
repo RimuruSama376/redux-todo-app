@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     marginBottom: 15,
   },
   title: {
-    fontStyle: "normal",
+    fontFamily: "Inter-500",
     fontWeight: "500",
     fontSize: 14,
     lineHeight: 20,

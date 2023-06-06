@@ -13,7 +13,7 @@ function TaskDetails() {
     <View style={styles.container}>
       <Text style={styles.title}>Task Title</Text>
       <Text style={styles.taskTitleText}>{activeTask?.title}</Text>
-      <Text style={styles.title}>Description</Text>
+      <Text style={styles.title}>Descriptions</Text>
       <Text style={styles.descriptionText}>{activeTask?.description}</Text>
       <View style={styles.avatarRow}>
         <Image
@@ -36,17 +36,17 @@ const styles = StyleSheet.create({
   title: {
     // width: 70,
     // height: 20,
-    fontStyle: "normal",
+    fontFamily: "Inter-500",
     fontWeight: "500",
     fontSize: 14,
     lineHeight: 20,
-    color: "#ABB6C8",
+    color: "#5D6B98",
     marginBottom: 10,
   },
   taskTitleText: {
     width: 234,
     height: 30,
-    fontStyle: "normal",
+    fontFamily: "Inter-600",
     fontWeight: "600",
     fontSize: 20,
     lineHeight: 30,
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
   descriptionText: {
     // width: 342,
     maxHeight: 84,
-    fontStyle: "normal",
+    fontFamily: "Inter-500",
     fontWeight: "500",
     marginBottom: 15,
     fontSize: 14,

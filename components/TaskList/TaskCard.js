@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
   title: {
     // width: 70,
     // height: 20,
-    fontStyle: "normal",
+    fontFamily: "Inter-500",
     fontWeight: "500",
     fontSize: 16,
     lineHeight: 24,

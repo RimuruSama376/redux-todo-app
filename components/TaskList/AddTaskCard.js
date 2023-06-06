@@ -98,6 +98,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     borderRadius: 16,
     marginBottom: 20,
+    fontFamily: "Inter-500",
   },
   innerContainer: {
     flexDirection: "row",
@@ -108,6 +109,7 @@ const styles = StyleSheet.create({
     fontWeight: "500",
     fontSize: 16,
     lineHeight: 24,
+    fontFamily: "Inter-500",
     color: "#ABB6C8",
   },
   avatarImage: {
@@ -137,7 +139,8 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   inputLabel: {
-    fontWeight: "bold",
+    fontFamily: "Inter-600",
+    fontWeight: "600",
     marginBottom: 5,
   },
   inputField: {
@@ -149,6 +152,8 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   textArea: {
+    fontFamily: "Inter-500",
+    fontWeight: "500",
     height: 100,
     textAlignVertical: "top",
   },
@@ -158,6 +163,8 @@ const styles = StyleSheet.create({
     justifyContent: "space-evenly",
   },
   button: {
+    fontFamily: "Inter-500",
+    fontWeight: "500",
     width: "30%",
     borderRadius: 20,
     padding: 10,

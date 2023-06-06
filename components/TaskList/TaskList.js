@@ -29,7 +29,7 @@ export default function Dummy() {
           <TaskCard />
         </ScrollView>
       </View>
-      <View>
+      <View style={styles.addTaskView}>
         <AddTaskCard />
       </View>
     </View>
@@ -38,25 +38,23 @@ export default function Dummy() {
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
+    flex: 1,
     flexDirection: "column",
     justifyContent: "flex-start",
     backgroundColor: "#fff",
     padding: 16,
-    borderWidth: 1,
-    borderColor: "black",
-    borderWidth: 1,
-    // height: "",
   },
   innerContainer: {
+    // flex: 1,
+    // borderWidth: 1,
     flexDirection: "row",
     justifyContent: "space-between",
     marginBottom: 15,
   },
   scrollViewContainer: {
-    // flex: 1,
+    flex: 5,
     // borderWidth: 1,
-    height: "45%",
+    height: "48%",
     marginBottom: 15,
   },
   title: {
@@ -69,5 +67,10 @@ const styles = StyleSheet.create({
   },
   avatarImage: {
     marginRight: 8,
+  },
+  addTaskView: {
+    flex: 1,
+    // borderWidth: 1,
+    marginBottom: 10,
   },
 });
